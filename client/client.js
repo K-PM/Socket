@@ -1,13 +1,15 @@
 const net = require('net')
 
-
+var miIP=''
+datos()
 function datos(){
-    client.write('escribe algo '+data.toString())
+    miIP =prompt("Ingrese el IP del servidor: ")
+
 }
 
 const options = {
     port: 4002,
-    host: ''
+    host: miIP
 }
 
 const client = net.createConnection(options)
@@ -34,6 +36,7 @@ function sendLine() {
             client.end()
             process.exit(0)
         }
-        client.write('escribe algo '+data.toString())
+       
+        client.write('escribe algo '+ data.toString())
     })
 }
